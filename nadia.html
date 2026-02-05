@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>For Nadia Safira ❤️</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #ff758c, #ff7eb3);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    h1 {
+      color: white;
+      text-align: center;
+      font-size: 3rem;
+      text-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      z-index: 2;
+      padding: 20px;
+    }
+
+    .floating {
+      position: absolute;
+      animation: floatUp 6s linear infinite;
+      pointer-events: none;
+    }
+
+    @keyframes floatUp {
+      from {
+        transform: translateY(100vh) scale(0.8);
+        opacity: 1;
+      }
+      to {
+        transform: translateY(-10vh) scale(1.2);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>
+    Nadia Safira ❤️<br>
+    You are my everything 💖<br>
+    Muah Muah Muah 😘💋
+  </h1>
+
+  <script>
+    const emojis = ["❤️","💖","💘","💋","😘","😍"];
+
+    function createLove() {
+      const span = document.createElement("span");
+      span.className = "floating";
+      span.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+      span.style.left = Math.random() * 100 + "vw";
+      span.style.fontSize = (22 + Math.random() * 36) + "px";
+      span.style.animationDuration = (4 + Math.random() * 3) + "s";
+
+      document.body.appendChild(span);
+
+      setTimeout(() => span.remove(), 7000);
+    }
+
+    setInterval(createLove, 250);
+  </script>
+
+</body>
+</html>
